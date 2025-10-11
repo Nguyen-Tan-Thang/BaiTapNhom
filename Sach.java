@@ -1,17 +1,16 @@
-// Lớp Sach biểu diễn thông tin của một cuốn sách
 public class Sach {
-    // ===== Thuộc tính (Attributes) =====
+    // Thuộc tính (private để thể hiện tính đóng gói)
     private String maSach;
     private String tieuDe;
     private String tacGia;
     private int namXuatBan;
     private int soLuong;
 
-    // ===== Constructor không tham số =====
+    // Constructor không tham số
     public Sach() {
     }
 
-    // ===== Constructor có tham số =====
+    // Constructor có tham số
     public Sach(String maSach, String tieuDe, String tacGia, int namXuatBan, int soLuong) {
         this.maSach = maSach;
         this.tieuDe = tieuDe;
@@ -20,7 +19,7 @@ public class Sach {
         this.soLuong = soLuong;
     }
 
-    // ===== Getter & Setter (tính đóng gói - Encapsulation) =====
+    // Getter và Setter
     public String getMaSach() {
         return maSach;
     }
@@ -61,13 +60,13 @@ public class Sach {
         this.soLuong = soLuong;
     }
 
-    // ===== Phương thức hiển thị thông tin =====
+    // Hiển thị thông tin sách
     public void hienThiThongTin() {
-        System.out.println("Mã sách: " + maSach);
-        System.out.println("Tiêu đề: " + tieuDe);
-        System.out.println("Tác giả: " + tacGia);
-        System.out.println("Năm xuất bản: " + namXuatBan);
-        System.out.println("Số lượng: " + soLuong);
-        System.out.println("-----------------------------");
+        System.out.println("===== Thong tin sach =====");
+        System.out.println("Ma sach: " + maSach);
+        System.out.println("Tieu de: " + tieuDe);
+        System.out.println("Tac gia: " + tacGia);
+        System.out.println("Nam xuat ban: " + namXuatBan);
+        System.out.println("So luong: " + soLuong);
     }
 }

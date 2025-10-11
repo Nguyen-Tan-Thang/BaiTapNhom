@@ -1,22 +1,31 @@
-// Lớp Test để tạo đối tượng và kiểm thử lớp Sach
 public class Test {
     public static void main(String[] args) {
-        // Tạo đối tượng Sach bằng constructor có tham số
-        Sach sach1 = new Sach("B001", "Lập trình Java cơ bản", "Nguyễn Văn A", 2023, 10);
+        QuanLySach ql = new QuanLySach();
 
-        // Tạo đối tượng Sach bằng constructor không tham số + setter
-        Sach sach2 = new Sach();
-        sach2.setMaSach("B002");
-        sach2.setTieuDe("Cấu trúc dữ liệu và Giải thuật");
-        sach2.setTacGia("Trần Thị B");
-        sach2.setNamXuatBan(2021);
-        sach2.setSoLuong(5);
+        // Tạo sách giáo trình
+        SachGiaoTrinh gt = new SachGiaoTrinh(
+            "GT001", "Lập trình Java", "Nguyen Van A", 2022, 10, "Công nghệ thông tin", "Đại học"
+        );
 
-        // Hiển thị thông tin các sách
-        System.out.println("=== Thông tin sách 1 ===");
-        sach1.hienThiThongTin();
+        // Tạo sách tiểu thuyết
+        SachTieuThuyet tt = new SachTieuThuyet(
+            "TT001", "Harry Potter", "J.K. Rowling", 2000, 5, "Kỳ ảo", true
+        );
 
-        System.out.println("=== Thông tin sách 2 ===");
-        sach2.hienThiThongTin();
+        // Thêm vào danh sách
+        ql.themSach(gt);
+        ql.themSach(tt);
+
+        // Hiển thị danh sách
+        ql.hienThiDanhSach();
+
+        // Cập nhật số lượng
+        ql.capNhatSoLuong("TT001", 8);
+
+        // Xóa sách
+        ql.xoaSach("GT001");
+
+        // Hiển thị sau khi cập nhật
+        ql.hienThiDanhSach();
     }
 }
