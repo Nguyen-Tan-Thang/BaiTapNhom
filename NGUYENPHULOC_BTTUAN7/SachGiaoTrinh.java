@@ -4,8 +4,8 @@ public class SachGiaoTrinh extends Sach {
 
     // Constructor đầy đủ tham số (gồm cả lớp cha)
     public SachGiaoTrinh(String maSach, String tieuDe, String tacGia, int namXuatBan, int soLuong,
-                         String monHoc, String capDo) {
-        super(maSach, tieuDe, tacGia, namXuatBan, soLuong);
+                         double giaCoBan, String monHoc, String capDo) {
+        super(maSach, tieuDe, tacGia, namXuatBan, soLuong, giaCoBan);
         this.monHoc = monHoc;
         this.capDo = capDo;
     }
@@ -27,11 +27,19 @@ public class SachGiaoTrinh extends Sach {
         this.capDo = capDo;
     }
 
+    // Ghi đè phương thức tính giá bán
+    @Override
+    public double tinhGiaBan() {
+        int soNam = 2025 - getNamXuatBan();
+        return getGiaCoBan() + (soNam * 5000);
+    }
+
     // Ghi đè phương thức toString()
     @Override
     public String toString() {
-        return super.toString() + 
+        return super.toString() +
                "\nMôn học: " + monHoc +
-               "\nCấp độ: " + capDo;
+               "\nCấp độ: " + capDo +
+               "\nGiá bán: " + tinhGiaBan() + " VNĐ";
     }
 }

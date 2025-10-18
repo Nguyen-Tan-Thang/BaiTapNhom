@@ -4,8 +4,8 @@ public class SachTieuThuyet extends Sach {
 
     // Constructor đầy đủ tham số
     public SachTieuThuyet(String maSach, String tieuDe, String tacGia, int namXuatBan, int soLuong,
-                          String theLoai, boolean laSachSeries) {
-        super(maSach, tieuDe, tacGia, namXuatBan, soLuong);
+                          double giaCoBan, String theLoai, boolean laSachSeries) {
+        super(maSach, tieuDe, tacGia, namXuatBan, soLuong, giaCoBan);
         this.theLoai = theLoai;
         this.laSachSeries = laSachSeries;
     }
@@ -27,12 +27,18 @@ public class SachTieuThuyet extends Sach {
         this.laSachSeries = laSachSeries;
     }
 
+    // Ghi đè phương thức tính giá bán
+    @Override
+    public double tinhGiaBan() {
+        return getGiaCoBan() + (laSachSeries ? 15000 : 0);
+    }
+
     // Ghi đè phương thức toString()
     @Override
     public String toString() {
         return super.toString() +
                "\nThể loại: " + theLoai +
-               "\nLà sách series: " + (laSachSeries ? "Có" : "Không");
+               "\nLà sách series: " + (laSachSeries ? "Có" : "Không") +
+               "\nGiá bán: " + tinhGiaBan() + " VNĐ";
     }
 }
-
