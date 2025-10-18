@@ -4,12 +4,12 @@ public class Test {
 
         // Tạo sách giáo trình
         SachGiaoTrinh gt = new SachGiaoTrinh(
-            "GT001", "Lập trình Java", "Nguyen Van A", 2022, 10, "Công nghệ thông tin", "Đại học"
+            "GT001", "Lap trinh Java", "Nguyen Van A", 2022, 10, "CNTT", "College"
         );
 
         // Tạo sách tiểu thuyết
         SachTieuThuyet tt = new SachTieuThuyet(
-            "TT001", "Harry Potter", "J.K. Rowling", 2000, 5, "Kỳ ảo", true
+            "TT001", "Harry Potter", "J.K. Rowling", 2000, 5, "kỳ ảo ", true
         );
 
         // Thêm vào danh sách
