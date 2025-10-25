@@ -1,17 +1,13 @@
-public abstract class Sach {
-    // Thuộc tính (private để thể hiện tính đóng gói)
+public abstract class Sach implements IGiaBan, IKiemKe {
     private String maSach;
     private String tieuDe;
     private String tacGia;
     private int namXuatBan;
     private int soLuong;
-    private double giaCoBan; // thêm thuộc tính mới
+    private double giaCoBan;
 
-    // Constructor không tham số
-    public Sach() {
-    }
+    public Sach() {}
 
-    // Constructor có tham số
     public Sach(String maSach, String tieuDe, String tacGia, int namXuatBan, int soLuong, double giaCoBan) {
         this.maSach = maSach;
         this.tieuDe = tieuDe;
@@ -21,7 +17,6 @@ public abstract class Sach {
         this.giaCoBan = giaCoBan;
     }
 
-    // Getter và Setter
     public String getMaSach() {
         return maSach;
     }
@@ -70,10 +65,6 @@ public abstract class Sach {
         this.giaCoBan = giaCoBan;
     }
 
-    // Phương thức trừu tượng (bắt buộc lớp con phải triển khai)
-    public abstract double tinhGiaBan();
-
-    // Hiển thị thông tin chung
     @Override
     public String toString() {
         return "Mã sách: " + maSach +
